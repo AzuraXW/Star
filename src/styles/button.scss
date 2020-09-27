@@ -1,0 +1,162 @@
+/* button.scss */
+@charset "UTF-8";
+@import "common/var";
+@import "mixins/mixins";
+
+@include b(button) {
+  min-width: 60px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  border-width: 1px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all .3s;
+  &~.star-button{
+    margin-left: 10px;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+  &.is-round{
+    border-radius: 20px;
+    padding: 10px 23px;
+  }
+  &-default {
+    color: #333;
+    border-color: #dcdfe6;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: #409eff;
+      border-color: #c6e2ff;
+      background-color: #ecf5ff;
+    }
+    &.is-plain{
+      &:active,
+      &:focus,
+      &:hover{
+        background-color: #fff;
+        color: $--color-primary;
+        border-color: $--color-primary;
+      }
+    }
+  }
+  &-primary {
+    color: #fff;
+    background-color: $--color-primary;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: mix($--color-primary, #ccc);
+    }
+    &.is-plain {
+      color: $--color-plain-text-primary;
+      border-color: $--color-plain-border-primary;
+      background-color: $--color-plain-bg-primary;
+      &:active,
+      &:focus,
+      &:hover{
+        color: #fff;
+        background-color: $--color-primary;
+        border-color: $--color-primary;
+      }
+    }
+  }
+
+  &-info {
+    color: #fff;
+    background-color: $--color-info;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: mix($--color-info, #ccc);
+    }
+    &.is-plain {
+      color: $--color-plain-text-info;
+      border-color: $--color-plain-border-info;
+      background-color: $--color-plain-bg-info;
+      &:active,
+      &:focus,
+      &:hover{
+        color: #fff;
+        background-color: $--color-info;
+        border-color: $--color-info;
+      }
+    }
+  }
+  &-success {
+    color: #fff;
+    background-color: $--color-success;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: mix($--color-success, #ccc);
+    }
+    &.is-plain {
+      color: $--color-plain-text-success;
+      border-color: $--color-plain-border-success;
+      background-color: $--color-plain-bg-success;
+      &:active,
+      &:focus,
+      &:hover{
+        color: #fff;
+        background-color: $--color-success;
+        border-color: $--color-success;
+      }
+    }
+  }
+  &-danger {
+    color: #fff;
+    background-color: $--color-danger;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: mix($--color-danger, #ccc);
+    }
+    &.is-plain {
+      color: $--color-plain-text-danger;
+      border-color: $--color-plain-border-danger;
+      background-color: $--color-plain-bg-danger;
+      &:active,
+      &:focus,
+      &:hover{
+        color: #fff;
+        background-color: $--color-danger;
+        border-color: $--color-danger;
+      }
+    }
+  }
+  &-warning {
+    color: #fff;
+    background-color: $--color-warning;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: mix($--color-warning, #ccc);
+    }
+    &.is-plain {
+      color: $--color-plain-text-warning;
+      border-color: $--color-plain-border-warning;
+      background-color: $--color-plain-bg-warning;
+      &:active,
+      &:focus,
+      &:hover{
+        color: #fff;
+        background-color: $--color-warning;
+        border-color: $--color-warning;
+      }
+    }
+  }
+}
