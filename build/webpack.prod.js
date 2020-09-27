@@ -15,8 +15,8 @@ module.exports = merge(webpackBaseConfig, {
   output: {
     path: path.resolve(__dirname, '../lib'),
     publicPath: '/lib/',
-    filename: 'star-ui.min.js',  // 改成自己的类库名
-    library: 'star-ui', // 类库导出
+    filename: 'starx-ui.min.js',
+    library: 'starx-ui', // 类库导出
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

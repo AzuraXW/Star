@@ -1,8 +1,8 @@
 <template>
   <button 
-  class="star-button" 
+  class="starx-button" 
   :class="{
-    [`star-button-${type}`]: true,
+    [`starx-button-${type}`]: true,
     'is-plain': plain,
     'is-round': round
     }"

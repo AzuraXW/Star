@@ -11,7 +11,7 @@ function buildCss(cb) {
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(rename('star-ui.css'))
+    .pipe(rename('starx-ui.css'))
     .pipe(gulp.dest('../lib/styles'));
   cb()
 }

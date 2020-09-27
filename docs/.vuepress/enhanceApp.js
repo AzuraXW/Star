@@ -1,4 +1,4 @@
-import StarUI from '../../index';
+import StarxUI from '../../src/index';
 import "../../src/styles/index.scss";
 
 export default ({
@@ -6,5 +6,5 @@ export default ({
   options,
   router
 }) => {
-  Vue.use(StarUI)
+  Vue.use(StarxUI)
 }

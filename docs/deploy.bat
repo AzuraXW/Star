@@ -8,7 +8,7 @@ cd ./.vuepress/dist
 git init
 git add -A
 git commit -m 'auto-deploy'
-git remote add origin git@github.com:AzuraXW/star-ui.git
+git remote add origin git@github.com:AzuraXW/starx-ui.git
 git pull
 git push --force origin HEAD:gh-pages
 

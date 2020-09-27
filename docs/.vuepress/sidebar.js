@@ -1,7 +1,7 @@
 const sidebar = {
   '/component/': [
     {
-      title: '开发指南',
+      title: '快速开始',
       collapsable: false,
       children: [
         'guide/introduction',
