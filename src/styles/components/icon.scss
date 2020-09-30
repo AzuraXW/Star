@@ -1,0 +1,8 @@
+@import '../mixins/mixins.scss';
+
+@include b(icon) {
+  display: inline-block;
+  & ~ .starx-icon {
+    margin-left: 20px;
+  }
+}

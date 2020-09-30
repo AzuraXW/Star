@@ -1,7 +1,17 @@
 /* button.scss */
 @charset "UTF-8";
-@import "common/var";
-@import "mixins/mixins";
+@import "../common/var.scss";
+@import "../mixins/mixins.scss";
+
+.medium{
+  padding: 8px 20px!important;
+}
+.small{
+  padding: 6px 15px!important;
+}
+.mini{
+  padding: 4px 15px!important;
+}
 
 @include b(button) {
   min-width: 60px;
@@ -13,8 +23,23 @@
   outline: none;
   border: 1px solid transparent;
   padding: 10px 20px;
-  cursor: pointer;
   transition: all .3s;
+  &.is-loading{
+    position: relative;
+    pointer-events: none;
+    opacity: .7;
+  }
+  &-icon{
+    display: inline-block;
+  }
+  &.is-circle {
+    padding: 12px;
+    border-radius: 50%;
+  }
+  &:focus,
+  &:hover{
+    cursor: pointer;
+  }
   &~.starx-button{
     margin-left: 10px;
   }
@@ -31,7 +56,10 @@
     color: #333;
     border-color: #dcdfe6;
 
-    &:active,
+    &:active{
+      border-color: #3a8ee6;
+      background-color: #3a8ee6;
+    }
     &:focus,
     &:hover {
       color: #409eff;
@@ -45,6 +73,23 @@
         background-color: #fff;
         color: $--color-primary;
         border-color: $--color-primary;
+      }
+
+      &.is-disable,
+      &.is-disable:focus,
+      &.is-disable:hover {
+        background-color: #fff;
+        border-color: #ebeef5;
+        color: #c0c4cc;
+      }
+    }
+    &.is-disable {
+      background-color: #fff;
+      border-color: #ebeef5;
+      color: #c0c4cc;
+      &:focus,
+      &:hover {
+        cursor: not-allowed;
       }
     }
   }
@@ -67,6 +112,26 @@
         color: #fff;
         background-color: $--color-primary;
         border-color: $--color-primary;
+      }
+      &.is-disable{
+        color: #8cc5ff;
+        background-color: $--color-disable-plain-primary;
+        border-color: $--color-disable-plain-primary;
+        &:focus,
+        &:hover{
+          color: #8cc5ff;
+          background-color: $--color-disable-plain-primary;
+          border-color: #d9ecff;
+        }
+      }
+    }
+    &.is-disable {
+      background-color: $--color-disable-primary;
+      border-color: $--color-disable-primary;
+      &:active,
+      &:focus,
+      &:hover{
+        cursor: not-allowed;
       }
     }
   }
@@ -91,6 +156,21 @@
         background-color: $--color-info;
         border-color: $--color-info;
       }
+      &.is-disable,
+      &.is-disable:focus,
+      &.is-disable:hover {
+        color: #a4da89;
+        background-color: #f0f9eb;
+        border-color: #e1f3d8;
+      }
+    }
+    &.is-disable {
+      background-color: $--color-disable-info;
+      border-color: $--color-disable-info;
+      &:focus,
+      &:hover {
+        cursor: not-allowed;
+      }
     }
   }
   &-success {
@@ -112,6 +192,21 @@
         color: #fff;
         background-color: $--color-success;
         border-color: $--color-success;
+      }
+      &.is-disable,
+      &.is-disable:focus,
+      &.is-disable:hover {
+        color: #bcbec2;
+        background-color: #f4f4f5;
+        border-color: #e9e9eb;
+      }
+    }
+    &.is-disable {
+      background-color: $--color-disable-success;
+      border-color: $--color-disable-success;
+      &:focus,
+      &:hover {
+        cursor: not-allowed;
       }
     }
   }
@@ -135,6 +230,22 @@
         background-color: $--color-danger;
         border-color: $--color-danger;
       }
+
+      &.is-disable,
+      &.is-disable:focus,
+      &.is-disable:hover {
+        color: #f0c78a;
+        background-color: #fdf6ec;
+        border-color: #faecd8;
+      }
+    }
+    &.is-disable {
+      background-color: $--color-disable-danger;
+      border-color: $--color-disable-danger;
+      &:focus,
+      &:hover {
+        cursor: not-allowed;
+      }
     }
   }
   &-warning {
@@ -156,6 +267,22 @@
         color: #fff;
         background-color: $--color-warning;
         border-color: $--color-warning;
+      }
+
+      &.is-disable,
+      &.is-disable:focus,
+      &.is-disable:hover {
+        color: #f9a7a7;
+        background-color: #fef0f0;
+        border-color: #fde2e2;
+      }
+    }
+    &.is-disable {
+      background-color: $--color-disable-warning;
+      border-color: $--color-disable-warning;
+      &:focus,
+      &:hover {
+        cursor: not-allowed;
       }
     }
   }

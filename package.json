@@ -12,7 +12,9 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "build:components": "webpack --config build/webpack.component.js",
-    "dist": "npm run build:style && npm run build:prod && npm run build:components"
+    "dist": "npm run build:style && npm run build:prod && npm run build:components",
+    "test": "standard",
+    "fix": "standard --fix"
   },
   "keywords": [
     "vue",
@@ -26,6 +28,7 @@
   "dependencies": {
     "async-validator": "^3.0.4",
     "core-js": "2.6.9",
+    "highlight.js": "^10.2.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
   },
@@ -67,6 +70,7 @@
     "sass-loader": "^7.3.1",
     "sinon": "^7.4.1",
     "sinon-chai": "^3.3.0",
+    "standard": "^14.3.4",
     "style-loader": "^1.0.0",
     "url-loader": "^2.1.0",
     "vue-loader": "^15.7.1",

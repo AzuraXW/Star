@@ -1,0 +1,81 @@
+@import '../mixins/mixins.scss';
+
+@include b(dialog-wrapper) {
+  position: fixed;
+  z-index: 3564;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .3);
+  @include b(dialog) {
+    position: relative;
+    width: 50%;
+    margin: 0 auto 50px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    box-sizing: border-box;
+    border-radius: 2px;
+    @include b(dialog-header) {
+      padding: 20px 20px 10px;
+      @include b(dialog-title) {
+        line-height: 24px;
+        font-size: 18px;
+        color: #303133;
+      }
+      .starx-dialog-headerbtn{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        outline: none;
+        border: none;
+        font-weight: 300;
+        font-size: 10px;
+        color: rgb(141, 141, 141);
+        cursor: pointer;
+        background-color: transparent;
+        &:hover{
+          color: #409eff;
+        }
+      }
+    }
+    @include b(dialog-body) {
+      padding: 30px 20px;
+      font-weight: 300;
+    }
+    @include b(dialog-footer) {
+      padding: 10px 20px 20px;
+      text-align: right;
+    }
+  }
+}
+
+
+.dialog-fade-enter-active{
+  animation: dialog-fade-in .3s;
+}
+.dialog-fade-leave-active{
+  animation: dialog-fade-out .3s;
+}
+@keyframes dialog-fade-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  } 
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes dialog-fade-out {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+}

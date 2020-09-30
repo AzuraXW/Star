@@ -1,16 +1,16 @@
 /*  webpack.prod.js */
-const path = require('path');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const webpackBaseConfig = require('./webpack.base.js');
+const path = require('path')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const webpackBaseConfig = require('./webpack.base.js')
 
-process.env.NODE_ENV = 'production';
+process.env.NODE_ENV = 'production'
 
 module.exports = merge(webpackBaseConfig, {
   devtool: 'source-map',
-  mode: "production",
+  mode: 'production',
   entry: {
-    main: path.resolve(__dirname, '../src/index.js')  // 将src下的index.js 作为入口点
+    main: path.resolve(__dirname, '../src/index.js') // 将src下的index.js 作为入口点
   },
   output: {
     path: path.resolve(__dirname, '../lib'),
@@ -33,4 +33,4 @@ module.exports = merge(webpackBaseConfig, {
       'process.env.NODE_ENV': '"production"'
     })
   ]
-});
+})

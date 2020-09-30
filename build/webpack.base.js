@@ -1,11 +1,11 @@
 /* webpack.base.js */
-const path = require('path');
-const webpack = require('webpack');
-const pkg = require('../package.json');
+const path = require('path')
+const webpack = require('webpack')
+const pkg = require('../package.json')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-function resolve(dir) {
-  return path.join(__dirname, '..', dir);
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
 }
 
 module.exports = {
@@ -21,39 +21,39 @@ module.exports = {
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: true,
-                },
-              },
+                  sourceMap: true
+                }
+              }
             ],
             less: [
               'vue-style-loader',
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: true,
-                },
+                  sourceMap: true
+                }
               },
               {
                 loader: 'less-loader',
                 options: {
-                  sourceMap: true,
-                },
-              },
-            ],
+                  sourceMap: true
+                }
+              }
+            ]
           },
           postLoaders: {
             html: 'babel-loader?sourceMap'
           },
-          sourceMap: true,
+          sourceMap: true
         }
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
         options: {
-          sourceMap: true,
+          sourceMap: true
         },
-        exclude: /node_modules/,
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -61,14 +61,14 @@ module.exports = {
           {
             loader: 'style-loader',
             options: {
-              sourceMap: true,
-            },
+              sourceMap: true
+            }
           },
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
-            },
+              sourceMap: true
+            }
           }
         ]
       },
@@ -78,21 +78,21 @@ module.exports = {
           {
             loader: 'style-loader',
             options: {
-              sourceMap: true,
-            },
+              sourceMap: true
+            }
           },
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
-            },
+              sourceMap: true
+            }
           },
           {
             loader: 'less-loader',
             options: {
-              sourceMap: true,
-            },
-          },
+              sourceMap: true
+            }
+          }
         ]
       },
       {
@@ -101,21 +101,21 @@ module.exports = {
           {
             loader: 'style-loader',
             options: {
-              sourceMap: true,
-            },
+              sourceMap: true
+            }
           },
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
-            },
+              sourceMap: true
+            }
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
-            },
-          },
+              sourceMap: true
+            }
+          }
         ]
       },
       {
@@ -127,7 +127,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      'vue': 'vue/dist/vue.esm.js',
+      vue: 'vue/dist/vue.esm.js',
       '@': resolve('src')
     }
   },
@@ -138,4 +138,4 @@ module.exports = {
     }),
     new VueLoaderPlugin()
   ]
-};
+}

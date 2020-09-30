@@ -9,10 +9,30 @@ const sidebar = {
       ]
     },
     {
-      title: '基础组件',
+      title: '组件',
       collapsable: false,
       children: [
-        'basic/button'
+        {
+          title: 'Basic',
+          collapsable: false,
+          children: [
+            'basic/icon',
+            'basic/button'
+          ]
+        },
+        {
+          title: 'Form',
+          collapsable: false,
+          children: [
+          ]
+        },
+        {
+          title: 'Others',
+          collapsable: false,
+          children: [
+            'others/dialog'
+          ]
+        }
       ]
     },
   ]
