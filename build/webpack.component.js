@@ -1,15 +1,15 @@
-const path = require('path')
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const webpackBaseConfig = require('./webpack.base.js')
-const components = require('./components.json')
-process.env.NODE_ENV = 'production'
+const path = require('path');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const webpackBaseConfig = require('./webpack.base.js');
+const components = require('./components.json');
+process.env.NODE_ENV = 'production';
 
-const basePath = path.resolve(__dirname, '../')
-const entries = {}
+const basePath = path.resolve(__dirname, '../');
+const entries = {};
 Object.keys(components).forEach(key => {
-  entries[key] = path.join(basePath, 'src', components[key])
-})
+  entries[key] = path.join(basePath, 'src', components[key]);
+});
 
 module.exports = merge(webpackBaseConfig, {
   devtool: 'source-map',
@@ -36,4 +36,4 @@ module.exports = merge(webpackBaseConfig, {
       'process.env.NODE_ENV': '"production"'
     })
   ]
-})
+});

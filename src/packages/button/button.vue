@@ -10,7 +10,7 @@
     'is-circle': circle,
     'is-loading': loading
     }"
-  type="button"
+  :type="nativeType"
   :disabled="disabled"
   @click="$emit('click', $event)"
   >
@@ -29,7 +29,7 @@ export default {
   name: 'Button',
   props: {
     type: {
-      validator (value) {
+      validator(value) {
         return oneOf(value, ['default', 'primary', 'info', 'success', 'warning', 'danger']);
       },
       default: 'default',
@@ -48,7 +48,7 @@ export default {
       default: false
     },
     size: {
-      validator (value) {
+      validator(value) {
         return oneOf(value, ['default', 'medium', 'small', 'mini']);
       },
       type: String,
@@ -69,21 +69,25 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    nativeType: {
+      type: String,
+      default: 'button'
     }
   },
   computed: {
-    btnIconCls () {
+    btnIconCls() {
       if (this.loading) {
         return {
-          "fas fa-spinner fa-pulse": true
-        }
+          'fas fa-spinner fa-pulse': true
+        };
       } else {
         return {
           [`fas fa-${this.icon}`]: true
-        }
+        };
       }
     }
   }
-}
+};
 </script>
 

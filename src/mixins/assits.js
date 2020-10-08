@@ -1,5 +1,5 @@
-export function oneOf (value, array) {
+export function oneOf(value, array) {
   return array.find(val => {
-    return val === value
-  })
+    return val === value;
+  });
 }

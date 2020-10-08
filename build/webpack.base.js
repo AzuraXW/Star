@@ -1,11 +1,11 @@
 /* webpack.base.js */
-const path = require('path')
-const webpack = require('webpack')
-const pkg = require('../package.json')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const path = require('path');
+const webpack = require('webpack');
+const pkg = require('../package.json');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
+function resolve(dir) {
+  return path.join(__dirname, '..', dir);
 }
 
 module.exports = {
@@ -138,4 +138,4 @@ module.exports = {
     }),
     new VueLoaderPlugin()
   ]
-}
+};

@@ -1,10 +1,10 @@
 /*  webpack.prod.js */
-const path = require('path')
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const webpackBaseConfig = require('./webpack.base.js')
+const path = require('path');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const webpackBaseConfig = require('./webpack.base.js');
 
-process.env.NODE_ENV = 'production'
+process.env.NODE_ENV = 'production';
 
 module.exports = merge(webpackBaseConfig, {
   devtool: 'source-map',
@@ -33,4 +33,4 @@ module.exports = merge(webpackBaseConfig, {
       'process.env.NODE_ENV': '"production"'
     })
   ]
-})
+});

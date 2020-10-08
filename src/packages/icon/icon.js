@@ -1,17 +1,17 @@
 export default {
   name: 'Icon',
-  render: function (h) {
+  render: function(h) {
     return h(
       'span',
       {
-        'class': {
+        class: {
           'starx-icon': true
         }
       },
       [
         h('i',
           {
-            'class': {
+            class: {
               [`${this.classes}`]: true,
               'fa-spin': this.spin,
               [`${this.sizeCls}`]: true,
@@ -55,28 +55,28 @@ export default {
     }
   },
   computed: {
-    classes () {
+    classes() {
       if (this.type) {
-        return `fas fa-${this.type}`
+        return `fas fa-${this.type}`;
       }
       if (this.custom) {
         return this.custom;
       }
     },
-    styles () {
+    styles() {
       return {
         color: this.color,
         fontSize: this.size + 'px'
-      }
+      };
     },
-    sizeCls () {
+    sizeCls() {
       const iconSize = {
         medium: 'fa-lg',
         small: 'fa-sm',
         mini: 'fa-xs',
         default: 'fa-2x'
-      }
+      };
       return iconSize[this.sizetype];
     }
   }
-}
+};

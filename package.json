@@ -9,12 +9,13 @@
   "scripts": {
     "build:style": "gulp --gulpfile build/gen-style.js",
     "build:prod": "webpack --config build/webpack.prod.js",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "docs:dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.demo.js",
+    "docs:build": "cross-env NODE_ENV=production webpack --config build/webpack.demo.js",
     "build:components": "webpack --config build/webpack.component.js",
     "dist": "npm run build:style && npm run build:prod && npm run build:components",
     "test": "standard",
-    "fix": "standard --fix"
+    "fix": "standard --fix",
+    "lint": "eslint --fix examples"
   },
   "keywords": [
     "vue",
@@ -26,11 +27,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vue/component-compiler-utils": "^3.2.0",
     "async-validator": "^3.0.4",
     "core-js": "2.6.9",
-    "highlight.js": "^10.2.0",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7"
+    "highlight.js": "^9.18.3",
+    "html-webpack-plugin": "^4.5.0",
+    "transliteration": "^2.1.11",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vuescroll": "^4.16.1",
+    "webpack-dev-server": "^3.11.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -38,6 +43,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "@vue/component-compiler-utils": "^2.6.0",
     "@babel/core": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
@@ -53,6 +59,7 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
+    "highlight.js": "^9.3.0",
     "karma": "^4.2.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.0",
@@ -64,8 +71,15 @@
     "karma-webpack": "^4.0.2",
     "less": "^3.10.2",
     "less-loader": "^5.0.0",
+    "markdown-it": "^8.4.1",
+    "markdown-it-anchor": "^5.0.2",
+    "markdown-it-chain": "^1.3.0",
+    "markdown-it-container": "^2.0.0",
+    "mini-css-extract-plugin": "^0.4.1",
     "mocha": "^6.2.0",
     "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "progress-bar-webpack-plugin": "^1.11.0",
     "rimraf": "^3.0.0",
     "sass-loader": "^7.3.1",
     "sinon": "^7.4.1",
@@ -73,10 +87,22 @@
     "standard": "^14.3.4",
     "style-loader": "^1.0.0",
     "url-loader": "^2.1.0",
-    "vue-loader": "^15.7.1",
+    "vue": "2.5.21",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "2.5.21",
+    "vue-template-es2015-compiler": "^1.6.0",
+    "vue-loader": "^15.7.0",
     "vue-style-loader": "^4.1.2",
     "vuepress": "^1.0.3",
-    "vuepress-plugin-auto-sidebar": "^1.5.0"
+    "vuepress-plugin-auto-sidebar": "^1.5.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "eslint": "4.18.2",
+    "eslint-config-elemefe": "0.1.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-html": "^4.0.1",
+    "eslint-plugin-json": "^1.2.0",
+    "copy-webpack-plugin": "^5.0.0"
   },
   "browserslist": [
     "last 3 Chrome versions",

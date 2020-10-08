@@ -1,0 +1,44 @@
+{
+  "nav": [
+    {
+      "name": "开发指南",
+      "children": [
+        {
+          "path": "/installation",
+          "name": "安装"
+        },
+        {
+          "path": "/quickstart",
+          "name": "快速上手"
+        }
+      ]
+    },
+    {
+      "name": "组件",
+      "groups": [
+        {
+          "groupName": "Basic",
+          "list": [
+            {
+              "path": "/button",
+              "title": "Button 按钮"
+            },
+            {
+              "path": "/icon",
+              "title": "Icon 字体图标"
+            }
+          ]
+        },
+        {
+          "groupName": "Others",
+          "list": [
+            {
+              "path": "/dialog",
+              "title": "Dialog 对话框"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,7 @@
 /* mixins/mixins.scss */
+@import '../common/var.scss';
+@import '../common/function.scss';
+
 $namespace: 'starx';  /* 组件库的样式前缀 */
 
 /* BEM
@@ -8,5 +11,44 @@ $namespace: 'starx';  /* 组件库的样式前缀 */
 
   .#{$B} {
     @content;
+  }
+}
+
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+@mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+  }
+
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
   }
 }
