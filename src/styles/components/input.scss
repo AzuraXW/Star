@@ -1,0 +1,312 @@
+@import '../common/var.scss';
+@import '../mixins/mixins.scss';
+
+
+@include b(textarea){
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: bottom;
+  font-size: $--font-size-base;
+
+  & .starx-input__count{
+    color: $--color-info;
+    display: block;
+    position: absolute;
+    background: $--color-white;
+    font-size: 12px;
+    bottom: 5px;
+    right: 10px;
+  }
+
+  @include e(inner) {
+    display: block;
+    resize: vertical;
+    padding: 5px 15px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: inherit;
+    color: $--input-font-color;
+    background-color: $--input-background-color;
+    background-image: none;
+    border: $--input-border;
+    border-radius: $--input-border-radius;
+    transition: box-shadow .15s ease-in-out, border .15s ease-in-out;
+    &::placeholder {
+      color: $--input-placeholder-color;
+    }
+
+    &:hover{
+      border-color: $--input-hover-border;
+    }
+
+    &:focus {
+      outline: none;
+      color: #495057;
+      background-color: #fff;
+      border-color: $--input-focus-border;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+  }
+}
+
+@include b(input) {
+  position: relative;
+  font-size: $--font-size-base;
+  width: 100%;
+
+  @include when(disabled) {
+    .starx-input__inner{
+      background-color: #f5f7fa;
+      border-color: #e4e7ed;
+      color: #c0c4cc;
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: #C0C4CC;
+      }
+    }
+    .starx-input__icon{
+      cursor: not-allowed;
+    }
+  }
+
+  @include when(exceed) {
+    .starx-input__inner{
+      border-color: $--color-danger;
+      color: $--color-danger;
+      &:focus{
+        box-shadow: 0 0 0 0.2rem rgba(243, 59, 31, .2);
+      }
+    }
+    .starx-input__suffix{
+      .starx-input__count{
+        color: $--color-danger;
+      }
+    }
+  }
+
+  & .starx-input__count{
+    height: calc(100% - 2px);
+    position: relative;
+    top: 1px;
+    display: inline-flex;
+    align-items: center;
+    color: $--color-info;
+    .starx-input__count-inner{
+      background-color: #fff;
+      font-size: 12px;
+      display: inline-block;
+      padding: 0 5px;
+    }
+  }
+  .starx-input__clear {
+    color: #C0C4CC;
+    cursor: pointer;
+    transition: color .2s cubic-bezier(.645,.045,.355,1);
+    vertical-align: middle;
+  }
+  @include e(inner) {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    font-size: inherit;
+    line-height: 1.5;
+    color: $--input-font-color;
+    outline: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: all .15s ease-in-out;
+    &::placeholder {
+      color: $--input-placeholder-color;
+    }
+
+    &:hover{
+      border-color: $--input-hover-border;
+    }
+    &:focus{
+      color: #495057;
+      background-color: #fff;
+      border-color: $--input-focus-border;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+  }
+  @include e(prefix) {
+    position: absolute;
+    height: 100%;
+    left: 5px;
+    top: 0;
+    text-align: center;
+    color: #C0C4CC;
+    transition: all .3s;
+    pointer-events: none;
+    z-index: 22;
+  }
+
+  @include e(prefix-inner){
+    pointer-events: all;
+  }
+
+  @include e(suffix) {
+    position: absolute;
+    height: 100%;
+    right: 5px;
+    top: 0;
+    text-align: center;
+    color: #C0C4CC;
+    transition: all .3s;
+    pointer-events: none;
+    z-index: 22;
+  }
+
+  @include e(suffix-inner){
+    pointer-events: all;
+  }
+
+  @include e(icon) {
+    @include e(icon) {
+      display: inline-block;
+      height: 100%;
+      width: 25px;
+      text-align: center;
+      transition: all .3s;
+      line-height: 100%;
+  
+      &:after {
+        content: '';
+        height: 100%;
+        width: 0;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  @include m(suffix) {
+    .starx-input__inner {
+      padding-right: 30px;
+    }
+  }
+  @include m(prefix) {
+    .starx-input__inner {
+      padding-left: 30px;
+    }
+  }
+
+  @include m(medium) {
+    font-size: $--input-medium-font-size;
+
+    @include e(inner) {
+      height: $--input-medium-height;
+      line-height: $--input-medium-height;
+    }
+
+  }
+  @include m(small) {
+    font-size: $--input-small-font-size;
+
+    @include e(inner) {
+      height: $--input-small-height;
+      line-height: $--input-small-height;
+    }
+
+  }
+  @include m(mini) {
+    font-size: $--input-mini-font-size;
+
+    @include e(inner) {
+      height: $--input-mini-height;
+      line-height: $--input-mini-height;
+    }
+
+  }
+}
+
+@include b(input-group) {
+  line-height: normal;
+  display: inline-table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  > .starx-input__inner {
+    vertical-align: middle;
+    display: table-cell;
+    border: $--border-base;
+    position: relative;
+    z-index: 22;
+    &:hover{
+      border-color: $--input-hover-border;
+    }
+    &:focus{
+      color: #495057;
+      background-color: #fff;
+      border-color: $--input-focus-border;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+  }
+  
+  @include e((append, prepend)) {
+    display: table-cell;
+    background-color: $--background-color-base;
+    color: $--color-info;
+    vertical-align: middle;
+    position: relative;
+    border: $--border-base;
+    border-radius: $--input-border-radius;
+    padding: 0 20px;
+    width: 1px;
+    white-space: nowrap;
+  }
+  @include e(append) {
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  @include e(prepend) {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  @include m(prepend) {
+    .starx-input__inner{
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .starx-input .starx-input__inner{
+      border-color: transparent;
+    }
+  }
+  @include m(append) {
+    .starx-input__inner {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .starx-input .starx-input__inner{
+      border-color: transparent;
+    }
+  }
+
+  .starx-button{
+    margin: -10px -20px;
+    display: inline-block;
+  }
+
+  button.starx-button{
+    background-color: transparent;
+    border-color: transparent;
+    color: inherit;
+    border-top: 0;
+    border-bottom: 0;
+  }
+}

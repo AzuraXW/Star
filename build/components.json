@@ -2,5 +2,6 @@
   "button": "packages/button/index.js",
   "icon": "packages/icon/index.js",
   "buttonGroup": "packages/buttonGroup/index.js",
-  "dialog": "packages/dialog/index.js"
+  "dialog": "packages/dialog/index.js",
+  "input": "packages/input/index.js"
 }

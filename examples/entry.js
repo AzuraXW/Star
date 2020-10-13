@@ -8,7 +8,7 @@ import 'vuescroll/dist/vuescroll.css';
 import vueScrollConfig from './config/vuescroll-config';
 
 import StarxUI from '../src/index';
-import '../src/styles/index.scss';
+import '../src/styles/components/index.scss';
 import './assets/styles/public.scss';
 
 import demoBlock from './components/demo-block.vue';

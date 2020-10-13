@@ -29,6 +29,23 @@ export default {
     data() {
       return navConfig.nav;
     }
+  },
+  mounted() {
+    this.imgWrapper();
+  },
+  updated() {
+    this.imgWrapper();
+  },
+  methods: {
+    imgWrapper() {
+      const imgList = [].slice.call(this.$el.querySelectorAll('img') || []);
+      imgList.forEach(img => {
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('img-wrapper');
+        img.parentNode.insertBefore(wrapper, img);
+        wrapper.appendChild(img);
+      });
+    }
   }
 };
 </script>
@@ -58,7 +75,7 @@ export default {
       padding-bottom: 100px;
       box-sizing: border-box;
       overflow: hidden;
-      p code{
+      p code, table code{
         color: #5e6d82;
         background-color: #e6effb;
         margin: 0 4px;
@@ -68,6 +85,17 @@ export default {
         border-radius: 3px;
         height: 18px;
         line-height: 18px;
+      }
+      .img-wrapper{
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px 3px rgba(0, 0, 0, .2);
+        margin: 25px;
+        margin-left: 0;
+        img{
+          width: 100%;
+          display: block;
+        }
       }
       h1, h2, h3, h4, h5{
         font-weight: normal;

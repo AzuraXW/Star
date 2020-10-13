@@ -30,6 +30,15 @@
           ]
         },
         {
+          "groupName": "Forms",
+          "list": [
+            {
+              "path": "/input",
+              "title": "input 输入框"
+            }
+          ]
+        },
+        {
           "groupName": "Others",
           "list": [
             {

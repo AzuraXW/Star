@@ -1,4 +1,5 @@
 @import '../mixins/mixins.scss';
+@import '../iconfont/scss/fontawesome.scss';
 
 @include b(icon) {
   display: inline-block;

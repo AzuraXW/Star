@@ -7,7 +7,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const components = require('./components.json');
 
 function buildCss(cb) {
-  gulp.src('../src/styles/index.scss')
+  gulp.src('../src/styles/components/index.scss')
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS())
@@ -28,14 +28,11 @@ function buildSeperateCss(cb) {
   cb();
 }
 
-function buildIconFontCss(cb) {
-  gulp.src('../src/styles/iconfont/scss/fontawesome.scss')
-    .pipe(sass())
-    .pipe(autoprefixer())
+function copyfont(cb) {
+  gulp.src('../src/styles/components/webfonts/**')
     .pipe(cleanCSS())
-    .pipe(rename('fontawesome.css'))
-    .pipe(gulp.dest('../lib/styles'));
+    .pipe(gulp.dest('../lib/styles/webfonts'));
   cb();
 }
 
-exports.default = gulp.series(buildCss, buildSeperateCss, buildIconFontCss);
+exports.default = gulp.series(buildCss, buildSeperateCss, copyfont);
